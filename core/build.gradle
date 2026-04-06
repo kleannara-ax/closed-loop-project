@@ -1,0 +1,21 @@
+// Core 모듈 - Application 진입점 + 보안/예외/로깅 공통 설정
+// ※ 이 모듈은 수정 금지 대상
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // MariaDB
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+}
+
+// Core가 최종 실행 가능한 jar (bootJar)
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = true
+}

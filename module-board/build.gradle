@@ -1,0 +1,20 @@
+// =============================================
+// Module-Board: 게시판 업무 모듈
+// =============================================
+// 패키지: com.company.module.board
+// API Prefix: /board-api/**
+// DB Table Prefix: MOD_BOARD_
+// =============================================
+
+dependencies {
+    // Core 모듈 의존
+    implementation project(':core')
+
+    // Spring Boot Starters (core가 api로 노출하지 않으므로 직접 선언)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
