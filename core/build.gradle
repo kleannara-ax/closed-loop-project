@@ -9,6 +9,11 @@ dependencies {
 
     // MariaDB
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
+    // 업무 모듈 (신규 모듈 추가 시 여기에 등록)
+    // runtimeOnly: 컴파일 순환 방지, bootJar 패키징 시에만 포함
+    runtimeOnly project(':module-user')
+    runtimeOnly project(':module-board')
 }
 
 // Core가 최종 실행 가능한 jar (bootJar)

@@ -4,8 +4,8 @@ spring:
 
   datasource:
     url: jdbc:mariadb://localhost:3306/company_platform
-    username: root
-    password: root
+    username: appuser
+    password: apppass123
     driver-class-name: org.mariadb.jdbc.Driver
     hikari:
       maximum-pool-size: 10
@@ -19,9 +19,10 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MariaDBDialect
+        physical_naming_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
 server:
-  port: 8080
+  port: 3000
 
 logging:
   level:
