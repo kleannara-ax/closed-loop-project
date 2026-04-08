@@ -1,0 +1,24 @@
+// =============================================
+// Module-Waste: 폐기물 순환 추적 업무 모듈
+// =============================================
+// 패키지: com.company.module.waste
+// API Prefix: /waste-api/**
+// DB Table Prefix: MOD_WASTE_
+// =============================================
+
+dependencies {
+    // Core 모듈 의존
+    implementation project(':core')
+
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // 테스트용 자체 DB - H2 인메모리 (MariaDB 의존 없이 독립 실행)
+    testRuntimeOnly 'com.h2database:h2'
+}

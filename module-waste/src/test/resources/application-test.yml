@@ -1,0 +1,36 @@
+# =============================================
+# Module-Waste 테스트 전용 설정
+# - 자체 H2 인메모리 DB 생성 및 연결
+# - 운영 MariaDB와 완전히 분리된 독립 DB
+# =============================================
+spring:
+  application:
+    name: company-platform-test
+
+  datasource:
+    url: jdbc:h2:mem:waste_test_db;DB_CLOSE_DELAY=-1;MODE=MariaDB;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+  security:
+    user:
+      name: testuser
+      password: testpass
+
+server:
+  port: 0
+
+logging:
+  level:
+    com.company: DEBUG
+    org.hibernate.SQL: DEBUG
